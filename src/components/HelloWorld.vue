@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ this.$store.state.count }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -84,12 +84,18 @@
 </template>
 
 <script>
+import local from '@/utils/local'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted(){
+     let loc = '1111'
+     local.set(loc,['徐海峰',"帅哥","真帅"],true)
+     console.log(local.get('1111'))
   }
 }
 </script>
